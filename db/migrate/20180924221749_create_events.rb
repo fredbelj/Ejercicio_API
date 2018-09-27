@@ -4,13 +4,13 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :event_name
       t.string :description
       t.date :date
-      t.datetame :time
+      t.datatime :time
       t.string :avg_rating
       t.string :category
       t.string :latitude
       t.string :longitude
       t.references :artist, foreign_key: true
-
+      t.references :category, foreign_key: true
       t.timestamps
     end
   end
