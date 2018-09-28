@@ -11,7 +11,7 @@ end
 
 # ********modelo index  (para consultar por categoria*********
 def category
-    @category = Event.find(params[:category])
+    @category = Event.where(category:params[:category]).or (Event.wherails re(category:params[:other]))
     
     render json:@category, status: :ok
   end
