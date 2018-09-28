@@ -16910,3 +16910,302 @@ Processing by EventsController#category as */*
 Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/events/Baile?other=M%C3%BAsica" for 127.0.0.1 at 2018-09-28 14:02:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#category as */*
+  Parameters: {"other"=>"Música", "category"=>"Baile"}
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `re' for #<EventsController:0x2921610>):
+  
+app/controllers/events_controller.rb:14:in `category'
+Started POST "/artists/" for 127.0.0.1 at 2018-09-28 14:03:12 -0500
+Processing by ArtistsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-09-28 19:03:12.408025"], ["updated_at", "2018-09-28 19:03:12.408025"]]
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[35m (142.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+Completed 201 Created in 167ms (Views: 0.7ms | ActiveRecord: 145.4ms)
+
+
+Started POST "/artists/events" for 127.0.0.1 at 2018-09-28 14:03:22 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/artists/events"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `call'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/artists/" for 127.0.0.1 at 2018-09-28 14:03:52 -0500
+Processing by ArtistsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-09-28 19:03:52.753649"], ["updated_at", "2018-09-28 19:03:52.753649"]]
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[35m (124.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+Completed 201 Created in 132ms (Views: 0.8ms | ActiveRecord: 125.9ms)
+
+
+Started POST "/artists/" for 127.0.0.1 at 2018-09-28 14:06:11 -0500
+Processing by ArtistsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-09-28 19:06:11.306173"], ["updated_at", "2018-09-28 19:06:11.306173"]]
+  ↳ app/controllers/artists_controller.rb:19
+  [1m[35m (156.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:19
+Completed 201 Created in 164ms (Views: 0.6ms | ActiveRecord: 157.2ms)
+
+
+Started GET "/artists/" for 127.0.0.1 at 2018-09-28 14:06:19 -0500
+Processing by ArtistsController#index as */*
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:6
+Completed 200 OK in 30ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/artists/22" for 127.0.0.1 at 2018-09-28 14:06:41 -0500
+Processing by ArtistsController#destroy as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[36mArtist Destroy (1.0ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[35m (120.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+Completed 500 Internal Server Error in 158ms (Views: 0.8ms | ActiveRecord: 121.5ms)
+
+
+Started DELETE "/artists/21" for 127.0.0.1 at 2018-09-28 14:06:45 -0500
+Processing by ArtistsController#destroy as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[36mArtist Destroy (1.0ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[35m (190.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+Completed 500 Internal Server Error in 200ms (Views: 1.3ms | ActiveRecord: 191.8ms)
+
+
+Started DELETE "/artists/20" for 127.0.0.1 at 2018-09-28 14:06:47 -0500
+Processing by ArtistsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[36mArtist Destroy (1.0ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/artists_controller.rb:33
+  [1m[35m (171.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:33
+Completed 500 Internal Server Error in 179ms (Views: 0.8ms | ActiveRecord: 172.1ms)
+
+
+Started GET "/artists/" for 127.0.0.1 at 2018-09-28 14:06:54 -0500
+Processing by ArtistsController#index as */*
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:6
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/artists/events" for 127.0.0.1 at 2018-09-28 14:07:15 -0500
+Processing by ArtistsController#show as */*
+  Parameters: {"id"=>"events"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:12
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=events):
+  
+app/controllers/artists_controller.rb:12:in `show'
+Started GET "/events" for 127.0.0.1 at 2018-09-28 14:07:38 -0500
+Processing by EventsController#todos as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:9
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/events/44" for 127.0.0.1 at 2018-09-28 14:08:53 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/events/44"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `call'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events/" for 127.0.0.1 at 2018-09-28 14:10:27 -0500
+Processing by EventsController#todos as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:9
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2018-09-28 14:10:30 -0500
+Processing by EventsController#todos as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:9
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2018-09-28 14:15:16 -0500
+Processing by EventsController#todos as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:9
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/artists/1events/1" for 127.0.0.1 at 2018-09-28 14:15:28 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/artists/1events/1"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `call'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/artists/1/events/1" for 127.0.0.1 at 2018-09-28 14:15:34 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"artist_id"=>"1", "id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."artist_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["artist_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+  [1m[36mEvent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:45
+  [1m[35m (62.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 64.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "events" WHERE "events"."id" = ?):
+  
+app/controllers/events_controller.rb:45:in `destroy'
+Started DELETE "/artists/1/events/1" for 127.0.0.1 at 2018-09-28 14:21:18 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"artist_id"=>"1", "id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."artist_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["artist_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+  [1m[36mEvent Destroy (2.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:45
+  [1m[35m (9.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 11.0ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "events" WHERE "events"."id" = ?):
+  
+app/controllers/events_controller.rb:45:in `destroy'
+Started DELETE "/artists/1/events/1" for 127.0.0.1 at 2018-09-28 14:22:58 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"artist_id"=>"1", "id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."artist_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["artist_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+  [1m[36mEvent Destroy (2.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:45
+  [1m[35m (40.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 42.0ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "events" WHERE "events"."id" = ?):
+  
+app/controllers/events_controller.rb:45:in `destroy'
+Started DELETE "/artists/1/events/1" for 127.0.0.1 at 2018-09-28 14:23:33 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"artist_id"=>"1", "id"=>"1"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."artist_id" = ? AND "events"."id" = ? LIMIT ?[0m  [["artist_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+  [1m[36mEvent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:45
+  [1m[35m (9.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:45
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 12.0ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "events" WHERE "events"."id" = ?):
+  
+app/controllers/events_controller.rb:45:in `destroy'
