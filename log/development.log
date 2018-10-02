@@ -18270,3 +18270,143 @@ Processing by ArtistsController#index as */*
 Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started POST "/artists/5/events?event_name=zumba&description=Zumba%20al%20parque&date=27-08-2018&time=16:00&avg_rating=4.3&category=Teatro&latitude=1236.13656.13654&longitude=1326.16584.164" for 127.0.0.1 at 2018-10-02 13:50:43 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#create as */*
+  Parameters: {"event_name"=>"zumba", "description"=>"Zumba al parque", "date"=>"27-08-2018", "time"=>"16:00", "avg_rating"=>"4.3", "category"=>"Teatro", "latitude"=>"1236.13656.13654", "longitude"=>"1326.16584.164", "artist_id"=>"5"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Completed 201 Created in 287ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2018-10-02 13:50:56 -0500
+Processing by ArtistsController#index as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:6
+Completed 200 OK in 18ms (Views: 3.9ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/artists/1/categories/1/events?event_name=&description=&date=&time=&avg_rating=&category=&latitude=&longitude" for 127.0.0.1 at 2018-10-02 13:51:19 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/artists/1/categories/1/events"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `call'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/artists/13/events?event_name=zumba&description=Zumba%20al%20parque&date=27-08-2018&time=16:00&avg_rating=4.3&category=Teatro&latitude=1236.13656.13654&longitude=1326.16584.164" for 127.0.0.1 at 2018-10-02 13:51:33 -0500
+Processing by EventsController#create as */*
+  Parameters: {"event_name"=>"zumba", "description"=>"Zumba al parque", "date"=>"27-08-2018", "time"=>"16:00", "avg_rating"=>"4.3", "category"=>"Teatro", "latitude"=>"1236.13656.13654", "longitude"=>"1326.16584.164", "artist_id"=>"13"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "description", "date", "time", "avg_rating", "category", "latitude", "longitude", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "zumba"], ["description", "Zumba al parque"], ["date", "2018-08-27"], ["time", "2018-10-02 16:00:00"], ["avg_rating", "4.3"], ["category", "Teatro"], ["latitude", "1236.13656.13654"], ["longitude", "1326.16584.164"], ["artist_id", 13], ["created_at", "2018-10-02 18:51:33.030575"], ["updated_at", "2018-10-02 18:51:33.030575"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (109.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Completed 201 Created in 120ms (Views: 0.6ms | ActiveRecord: 111.1ms)
+
+
+Started POST "/artists/13/events?event_name=zumba&description=Zumba%20al%20parque&date=Lunes&time=12:00&avg_rating=4&category=Teatro&latitude=2.2.2.2&longitude=1.1.1.1" for 127.0.0.1 at 2018-10-02 13:56:34 -0500
+Processing by EventsController#create as */*
+  Parameters: {"event_name"=>"zumba", "description"=>"Zumba al parque", "date"=>"Lunes", "time"=>"12:00", "avg_rating"=>"4", "category"=>"Teatro", "latitude"=>"2.2.2.2", "longitude"=>"1.1.1.1", "artist_id"=>"13"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("event_name", "description", "time", "avg_rating", "category", "latitude", "longitude", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "zumba"], ["description", "Zumba al parque"], ["time", "2018-10-02 12:00:00"], ["avg_rating", "4"], ["category", "Teatro"], ["latitude", "2.2.2.2"], ["longitude", "1.1.1.1"], ["artist_id", 13], ["created_at", "2018-10-02 18:56:34.231742"], ["updated_at", "2018-10-02 18:56:34.231742"]]
+  ↳ app/controllers/events_controller.rb:30
+  [1m[35m (105.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:30
+Completed 201 Created in 118ms (Views: 0.9ms | ActiveRecord: 106.1ms)
+
+
+Started GET "/artists/13" for 127.0.0.1 at 2018-10-02 13:56:46 -0500
+Processing by ArtistsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/artists/1/categories/1/events?event_name=&description=&date=&time=&avg_rating=&category=&latitude=&longitude" for 127.0.0.1 at 2018-10-02 13:57:44 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/artists/1/categories/1/events"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `call'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
