@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_224610) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.bigint "phone"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
