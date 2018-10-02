@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_224610) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "phone"
+    t.bigint "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,11 +47,9 @@ ActiveRecord::Schema.define(version: 2018_09_24_224610) do
     t.string "latitude"
     t.string "longitude"
     t.integer "artist_id"
-    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_events_on_artist_id"
-    t.index ["category_id"], name: "index_events_on_category_id"
   end
 
 end

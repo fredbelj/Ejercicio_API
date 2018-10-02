@@ -18484,3 +18484,72 @@ FOREIGN KEY ("event_id")
   ↳ bin/rails:4
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (137.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (135.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateArtists (20180924215339)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" bigint, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180924215339_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180924215339"]]
+  ↳ bin/rails:4
+  [1m[35m (116.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateEvents (20180924221749)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" varchar, "description" varchar, "date" date, "time" datetime, "avg_rating" varchar, "category" varchar, "latitude" varchar, "longitude" varchar, "artist_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_f36ec0b60d"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+)[0m
+  ↳ db/migrate/20180924221749_create_events.rb:3
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_events_on_artist_id" ON "events" ("artist_id")[0m
+  ↳ db/migrate/20180924221749_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180924221749"]]
+  ↳ bin/rails:4
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateEvaluations (20180924223648)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "evaluations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idevent" integer, "comment" varchar, "grade" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_1333ce282a"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20180924223648_create_evaluations.rb:3
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_evaluations_on_event_id" ON "evaluations" ("event_id")[0m
+  ↳ db/migrate/20180924223648_create_evaluations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180924223648"]]
+  ↳ bin/rails:4
+  [1m[35m (119.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateDays (20180924224610)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "days" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_ecefc1a6aa"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20180924224610_create_days.rb:3
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_days_on_event_id" ON "days" ("event_id")[0m
+  ↳ db/migrate/20180924224610_create_days.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180924224610"]]
+  ↳ bin/rails:4
+  [1m[35m (103.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-02 19:23:57.442682"], ["updated_at", "2018-10-02 19:23:57.442682"]]
+  ↳ bin/rails:4
+  [1m[35m (108.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

@@ -10,7 +10,6 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :latitude
       t.string :longitude
       t.references :artist, foreign_key: true
-      t.references :category, foreign_key: true
       t.timestamps
     end
   end
