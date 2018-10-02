@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2018_09_27_201427) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # create_table "categories", force: :cascade do |t|
+  #   t.string "category"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  # end
 
   create_table "days", force: :cascade do |t|
     t.string "day"
