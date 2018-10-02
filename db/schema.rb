@@ -10,20 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_201427) do
+ActiveRecord::Schema.define(version: 2018_09_24_224610) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  # create_table "categories", force: :cascade do |t|
-  #   t.string "category"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  # end
 
   create_table "days", force: :cascade do |t|
     t.string "day"
@@ -53,9 +47,11 @@ ActiveRecord::Schema.define(version: 2018_09_27_201427) do
     t.string "latitude"
     t.string "longitude"
     t.integer "artist_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_events_on_artist_id"
+    t.index ["category_id"], name: "index_events_on_category_id"
   end
 
 end
